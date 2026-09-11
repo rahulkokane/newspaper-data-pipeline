@@ -1,0 +1,127 @@
+# ============================================================
+# Python
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env/
+.python-version
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ============================================================
+# Environment / Secrets
+# ============================================================
+
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+credentials.json
+token.json
+secrets.json
+
+# ============================================================
+# Data - DO NOT COMMIT
+# ============================================================
+
+# Downloaded newspaper PDFs
+data/incoming/
+data/archive/
+data/failed/
+
+# Extracted article data
+data/articles/
+
+# Processed JSON / datasets
+data/processed/
+
+# Logs
+data/logs/
+logs/
+*.log
+
+# ============================================================
+# Browser / Playwright
+# ============================================================
+
+# Dedicated Chrome profile used for authenticated ePaper access
+.hindu-debug-profile/
+
+# Playwright artifacts
+playwright-report/
+test-results/
+blob-report/
+
+# ============================================================
+# Local temporary files
+# ============================================================
+
+tmp/
+temp/
+*.tmp
+*.temp
+
+# ============================================================
+# IDE / Editors
+# ============================================================
+
+.vscode/
+.idea/
+
+*.swp
+*.swo
+*~
+
+# ============================================================
+# OS
+# ============================================================
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Linux
+.directory
+
+# ============================================================
+# Jupyter
+# ============================================================
+
+.ipynb_checkpoints/
+
+# ============================================================
+# Test / Coverage
+# ============================================================
+
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ============================================================
+# Misc
+# ============================================================
+
+*.bak
+*.old

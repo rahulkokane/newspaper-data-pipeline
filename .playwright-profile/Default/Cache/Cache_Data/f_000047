@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" data-critters-container>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <base href="/id/">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    @-webkit-keyframes preloader-opacityPulse {
+      0%,
+      to {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes preloader-opacityPulse {
+      0%,
+      to {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    .body-relative {
+        position: relative;
+    }
+
+    body.form .p-social {
+      background: #323232;
+      opacity: 0.04;
+    }
+
+    body.form .p-social__item,
+    body.form .p-text--switch,
+    body.profile .p-header,
+    body.profile .p-logo,
+    body.profile .p-social {
+      display: none;
+    }
+
+    body.inside-checkout {
+      min-height: 527px;
+    }
+
+
+    .p-header {
+      border-bottom: 1px solid rgba(50, 50, 50, 0.08);
+      display: flex;
+      animation: preloader-opacityPulse 3s ease-in-out 0s infinite;
+    }
+
+    .p-footer {
+      border-top: 1px solid rgba(50, 50, 50, 0.08);
+      clear: both;
+      animation: preloader-opacityPulse 3s ease-in-out 0s infinite;
+    }
+
+    .p-footer .p-footer-content {
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .p-footer .footer-content .p-text--switch {
+      padding: 0 64px;
+    }
+
+    .inside-checkout .p-header {
+      display: none;
+    }
+
+    .p-lang {
+      display: inline-block;
+      height: 60px;
+      line-height: 60px;
+    }
+
+    .p-lang__label,
+    .p-lang__switcher {
+      display: inline-block;
+      height: 10px;
+      width: 16px;
+      margin-left: 22px;
+    }
+
+    .p-lang__switcher {
+      width: 22px;
+      margin-left: 11px;
+    }
+
+    .p-close {
+      float: right;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      p-text-align: center;
+      border-left: 1px solid rgba(50, 50, 50, 0.08);
+    }
+
+    .p-icon {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+    }
+
+    .p-logo {
+      min-height: 210px;
+      padding-top: 47px;
+      max-width: 320px;
+      margin: 0 auto 25px;
+      animation: preloader-opacityPulse 3s ease-in-out 0s infinite;
+    }
+
+    .p-img {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+    }
+
+    .p-text {
+      margin-top: 10px;
+    }
+
+    .p-text--action {
+      margin: 45px auto 30px;
+      padding: 0 64px;
+    }
+
+    .p-text--desc {
+      margin-top: 14px;
+    }
+
+    .p-text--desc.p-small {
+      padding: 0 24px;
+    }
+
+    .p-text--desc.p-xsmall {
+      padding: 0 56px;
+    }
+
+    .p-text--divider {
+      padding: 0 96px;
+      margin-bottom: 29px;
+    }
+
+    .p-text--switch {
+      margin-top: 29px;
+      padding: 0 55px;
+    }
+
+    .p-text__content {
+      height: 6px;
+    }
+
+    .p-main {
+      padding: 0 24px 25px;
+      max-width: 320px;
+      margin: 0 auto;
+      animation: preloader-opacityPulse 3s ease-in-out 0s infinite;
+    }
+
+    .p-bg {
+      background: #0f0f15;
+    }
+
+    .p-bg--secondary {
+      background: #c4c4c4;
+    }
+
+    .p-bg--4 {
+      opacity: 0.04;
+    }
+
+    .p-bg--10 {
+      opacity: 0.1;
+    }
+
+    .p-social {
+      white-space: nowrap;
+      height: 48px;
+      margin-bottom: 29px;
+    }
+
+    .p-social__item {
+      float: left;
+      box-sizing: border-box;
+      width: 25%;
+    }
+
+    .p-social__btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 24px;
+      margin: 0 auto;
+    }
+
+    .p-input {
+      height: 48px;
+      margin-top: 16px;
+    }
+
+    .p-input-cf {
+      margin-top: 24px;
+    }
+
+    .piano-id-short.piano-id-inline .p-header,
+    .piano-id-short.piano-id-inline .p-footer,
+    .piano-id-short.piano-id-inline .p-logo,
+    .piano-id-short .p-social__preloader,
+    .piano-id-short .p-text,
+    .piano-id-short .p-input.p-bg.p-bg--4 {
+      display: none;
+    }
+
+    .piano-id-short.piano-id-inline .p-main {
+      padding: 0;
+      margin: 0;
+      max-width: 100%;
+    }
+
+    .piano-id-short.piano-id-inline .p-input--cf {
+      margin-top: 0;
+    }
+
+    .piano-id-short.piano-id-rounded .p-input--cf {
+      border-radius: 999px;
+    }
+
+    #preloader-container {
+        position: relative;
+    }
+
+    [data-switch-case] {
+        display: none;
+    }
+
+    [data-switch-case].active {
+        display: block;
+    }
+
+    .inside-checkout .p-sessions {
+        border-radius: 6px;
+        border: 1px solid rgba(15, 15, 21, 0.06);
+        background: #FFF;
+    }
+
+    .p-sessions .p-header {
+        background: rgba(51, 51, 51, 0.02);
+        padding: 13px 25px;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 20px repeat(3, 1fr) 20px;
+        border: none;
+        margin-bottom: 6px;
+    }
+
+    .p-sessions .p-input {
+        margin: 0;
+        height: 14px;
+        border-radius: 2px;
+        background: linear-gradient(97deg, rgba(15, 15, 21, 0.00) 25.36%, rgba(15, 15, 21, 0.03) 49.68%, rgba(15, 15, 21, 0.00) 74.52%), rgba(15, 15, 21, 0.05);
+    }
+
+    .p-sessions .p-checkbox {
+        width: 14px;
+        height: 14px;
+        border-radius: 2px;
+        background: linear-gradient(97deg, rgba(15, 15, 21, 0.00) 25.36%, rgba(15, 15, 21, 0.03) 49.68%, rgba(15, 15, 21, 0.00) 74.52%), rgba(15, 15, 21, 0.05);
+    }
+
+    #preloader-container .p-sessions .p-tooltip {
+        width: 14px;
+        height: 14px;
+        border-radius: 100px;
+        background: linear-gradient(97deg, rgba(15, 15, 21, 0.00) 25.36%, rgba(15, 15, 21, 0.03) 49.68%, rgba(15, 15, 21, 0.00) 74.52%), rgba(15, 15, 21, 0.05);
+    }
+
+    .p-sessions .p-list-item {
+        padding: 13px 25px;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 20px repeat(3, 1fr) 20px;
+        border: none;
+        animation: preloader-opacityPulse 3s ease-in-out 0s infinite;
+    }
+
+    .p-sessions .p-list-item:last-child {
+        margin-bottom: 6px;
+    }
+
+    .p-w-30 {
+        max-width: 30%;
+    }
+
+    .p-w-50 {
+        max-width: 50%;
+    }
+
+    .p-w-80 {
+        max-width: 80%;
+    }
+
+    .p-profile .p-section-title {
+        animation: preloader-opacityPulse 3s ease-in-out 0s infinite;
+        margin-bottom: 20px;
+    }
+
+    .p-profile .p-section-title:first-child {
+        margin-top: 30px;
+    }
+
+    .p-profile .p-section-title .p-title {
+        background: #ebebeb;
+        height: 16px;
+        width: 80px;
+    }
+
+    .p-profile .p-row,
+    .p-newsletters .p-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        animation: preloader-opacityPulse 3s ease-in-out 0s infinite;
+    }
+
+    .p-newsletters .p-row:first-child {
+        margin-top: 30px;
+    }
+
+    .p-profile .p-row div,
+    .p-newsletters .p-row div {
+        border-radius: 2px;
+    }
+
+    .p-profile .p-label,
+    .p-newsletters .p-label {
+        background: #ebebeb;
+        height: 16px;
+        width: 172px;
+        margin-right: 20px;
+    }
+
+    .p-profile .p-input,
+    .p-newsletters .p-input {
+        background: #ebebeb;
+        height: 30px;
+        flex: 1;
+        margin: 0;
+    }
+
+    .p-profile .p-section-actions {
+        display: flex;
+        animation: preloader-opacityPulse 3s ease-in-out 0s infinite;
+        margin-bottom: 40px;
+        margin-top: 20px;
+    }
+
+    .p-section-actions .p-action {
+        background: #ebebeb;
+        height: 30px;
+        width: 80px;
+    }
+
+    .p-section-actions .p-action:first-child {
+        margin-right: 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .p-background {
+        position: fixed;
+        inset: 0;
+        background-color: #2d2d2d;
+      }
+
+      body.form .p-social {
+        background: #cdcdcd;
+      }
+
+      .p-close {
+        border-left: 1px solid rgba(205, 205, 205, 0.08);
+      }
+
+      .p-header {
+        border-bottom: 1px solid rgba(205, 205, 205, 0.08);
+      }
+
+      .p-footer {
+        border-top: 1px solid rgba(205, 205, 205, 0.08);
+      }
+
+      .p-bg {
+        background: #f0f0ea;
+      }
+
+      .p-bg--secondary {
+        background: #3b3b3b;
+      }
+    }
+  </style>
+<style>body{width:100%!important;margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;font-size:16px;font-weight:200;box-sizing:border-box;background:#fff}@-webkit-keyframes fadeIn{0%{opacity:0}to{opacity:1}}
+</style><link rel="stylesheet" href="https://cdn.piano.io/id/1.66.30/styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdn.piano.io/id/1.66.30/styles.css"></noscript><link rel="modulepreload" href="https://cdn.piano.io/id/1.66.30/chunk-F5V2QKUX.js"><link rel="modulepreload" href="https://cdn.piano.io/id/1.66.30/chunk-4H52UOZV.js"></head>
+<body class="body-relative">
+<div class="preloader">
+  <div class="p-background"></div>
+  <div id="preloader-container">
+    <div class="p-auth" data-switch-case="auth">
+      <div class="p-header">
+        <div class="p-lang">
+          <div class="p-lang__label p-bg p-bg--10"></div>
+          <div class="p-lang__switcher p-bg p-bg--10"></div>
+        </div>
+      </div>
+      <div class="p-logo">
+        <div class="p-img p-bg p-bg--10"></div>
+        <div class="p-text p-text--action">
+          <div class="p-text__content p-bg p-bg--secondary"></div>
+        </div>
+        <div class="p-text p-text--desc">
+          <div class="p-text__content p-bg p-bg--4"></div>
+        </div>
+        <div class="p-text p-text--desc p-small">
+          <div class="p-text__content p-bg p-bg--4"></div>
+        </div>
+        <div class="p-text p-text--desc p-xsmall">
+          <div class="p-text__content p-bg p-bg--4"></div>
+        </div>
+      </div>
+      <div class="p-main">
+        <div class="p-social p-social__preloader">
+          <div class="p-social__item">
+            <div class="p-social__btn p-bg p-bg--10"></div>
+          </div>
+          <div class="p-social__item">
+            <div class="p-social__btn p-bg p-bg--10"></div>
+          </div>
+          <div class="p-social__item">
+            <div class="p-social__btn p-bg p-bg--10"></div>
+          </div>
+          <div class="p-social__item">
+            <div class="p-social__btn p-bg p-bg--10"></div>
+          </div>
+        </div>
+        <div class="p-text p-text--action p-text--divider">
+          <div class="p-text__content p-bg p-bg--secondary"></div>
+        </div>
+        <div class="p-input p-bg p-bg--4"></div>
+        <div class="p-input p-bg p-bg--4"></div>
+        <div class="p-input p-input--cf p-bg p-bg--10"></div>
+        <div class="p-text p-text--switch">
+          <div class="p-text__content p-bg p-bg--4"></div>
+        </div>
+      </div>
+      <div class="p-footer">
+        <div class="p-footer-content">
+          <div class="p-text p-text--switch">
+            <div class="p-text__content p-bg p-bg--4"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="p-sessions" data-switch-case="sessions">
+      <div class="p-header">
+        <div class="p-checkbox"></div>
+        <div class="p-input p-w-30"></div>
+        <div class="p-input p-w-30"></div>
+        <div class="p-input p-w-30"></div>
+      </div>
+      <div class="p-list-item">
+        <div class="p-checkbox"></div>
+        <div class="p-input p-w-50"></div>
+        <div class="p-input p-w-50"></div>
+        <div class="p-input p-w-50"></div>
+        <div class="p-tooltip"></div>
+      </div>
+      <div class="p-list-item">
+        <div class="p-checkbox"></div>
+        <div class="p-input p-w-80"></div>
+        <div class="p-input p-w-80"></div>
+        <div class="p-input p-w-80"></div>
+      </div>
+    </div>
+    <div class="p-profile" data-switch-case="profile">
+      <div class="p-section-title">
+        <div class="p-title"></div>
+      </div>
+      <div class="p-row">
+        <div class="p-label"></div>
+        <div class="p-input"></div>
+      </div>
+      <div class="p-row">
+        <div class="p-label"></div>
+        <div class="p-input"></div>
+      </div>
+      <div class="p-section-actions">
+        <div class="p-action"></div>
+        <div class="p-action"></div>
+      </div>
+      <div class="p-section-title">
+        <div class="p-title"></div>
+      </div>
+      <div class="p-row">
+        <div class="p-label"></div>
+        <div class="p-input"></div>
+      </div>
+      <div class="p-row">
+        <div class="p-label"></div>
+        <div class="p-input"></div>
+      </div>
+      <div class="p-section-actions">
+        <div class="p-action"></div>
+        <div class="p-action"></div>
+      </div>
+    </div>
+    <div class="p-newsletters" data-switch-case="newsletters">
+      <div class="p-row">
+        <div class="p-label"></div>
+        <div class="p-input"></div>
+      </div>
+      <div class="p-row">
+        <div class="p-label"></div>
+        <div class="p-input"></div>
+      </div>
+      <div class="p-row">
+        <div class="p-label"></div>
+        <div class="p-input"></div>
+      </div>
+      <div class="p-row">
+        <div class="p-label"></div>
+        <div class="p-input"></div>
+      </div>
+      <div class="p-row">
+        <div class="p-label"></div>
+        <div class="p-input"></div>
+      </div>
+      <div class="p-row">
+        <div class="p-label"></div>
+        <div class="p-input"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-main style="display: none;"></app-main>
+<script>
+  var origin = getParameterByName("origin");
+  var sender = getParameterByName("sender");
+  var width = getParameterByName("width");
+  var insideCheckout = !!getParameterByName("checkout");
+  var preloaderHeight = getParameterByName("preloader_height");
+  var display = getParameterByName("display_mode");
+  var roundedPreloader = getParameterByName("rounded_preloader");
+
+  function sendMessage(event, params) {
+    var message = {
+      sender: sender,
+      event: event,
+      params: params
+    };
+
+    try {
+      var target = window === window.parent ? window.opener : window.parent;
+      target.postMessage(JSON.stringify(message), origin);
+    } catch (e) {
+      // console.log('failed to send postmessage', e, event, data);
+    }
+  }
+
+  function addClass(element, className) {
+    var prefix = element.className.length > 0 ? " " : "";
+    element.className = element.className + prefix + className;
+  }
+
+  function getParameterByName(name) {
+    var search = window.location.search;
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+    var results = regex.exec(search);
+    if (!results) return null;
+    if (!results[2]) return "";
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+
+  function getModuleName() {
+    var url = window.location.href;
+    var pathMatch = url.match(/\/id\/([^/?#]+)/);
+    if (!pathMatch || pathMatch.length < 1) {
+      return "auth";
+    }
+    return pathMatch[1];
+  }
+
+  function switchPreloader() {
+    const container = document.getElementById("preloader-container");
+    const module = getModuleName();
+
+    if (!container) return;
+
+    // Custom form widget has no skeleton; showing the "auth" fallback below
+    // causes a flash of an unstyled blank template before the form renders (ID-3643).
+    if (module === "form") return;
+
+    const activeElement = container.querySelector(`[data-switch-case="${module}"]`);
+    if (activeElement) {
+      addClass(activeElement, "active");
+    } else {
+      const authElement = container.querySelector("[data-switch-case='auth']");
+      if (authElement) {
+        addClass(authElement, "active");
+      }
+    }
+  }
+
+  var appRoute = window.location.hash.substr(1).slice(1).split("?")[0];
+  addClass(document.body, appRoute);
+  switchPreloader();
+
+  if (preloaderHeight) {
+    addClass(document.body, "piano-id-short");
+    var preloaderItem = document.querySelector(".p-input--cf");
+    preloaderItem.style.height = preloaderHeight + "px";
+
+    if (roundedPreloader) {
+      addClass(document.body, "piano-id-rounded");
+    }
+  }
+
+  if (display) {
+    addClass(document.body, "piano-id-" + display);
+  }
+
+  if (appRoute !== "profile") {
+    if (insideCheckout && !preloaderHeight) {
+      addClass(document.body, "inside-checkout");
+    }
+
+    sendMessage("resize", {
+      height: window.document.body.clientHeight,
+      width: width ? +width : undefined
+    });
+  }
+</script>
+<script>window.staticDomain = "";</script>
+<script src="https://cdn.piano.io/id/1.66.30/polyfills.js" type="module"></script><script src="https://cdn.piano.io/id/1.66.30/main.js" type="module"></script></body>
+</html>
