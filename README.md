@@ -22,13 +22,12 @@ The extractor is still heuristic. Newspaper layouts are complex, so the next ste
 ```powershell
 python -m pip install -r requirements.txt
 python main.py
+python extract.py
+python download_test.py --from 2026-07-01 --to 2026-07-31 --delay 15
 ```
 
 extract.py is to extract data from pdf
 src/article_extractor are fun to extract articles
-## python extract.py
-
-
 download_test is our main scraper
-## python download_test.py --from 2026-07-01 --to 2026-07-31 --delay 15
+
 
