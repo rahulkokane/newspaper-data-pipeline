@@ -1,0 +1,35 @@
+{
+  "source": "The Hindu",
+  "edition_date": "2026-07-01",
+  "publication_date": "July 1, 2026",
+  "pdf_file": "the_hindu_2026-07-01.pdf",
+  "pdf_sha256": "74e63e60eecc4f910d0d01cc6e567053ba0fe117ceb730ffd283cf2691fb159b",
+  "extracted_at": "2026-09-11T21:29:38.239659+05:30",
+  "article_count": 113,
+  "articles": [
+    {
+      "page": 1,
+      "section": null,
+      "title": "Gulf remittances rose in April despite West Asia crisis: Ministry",
+      "author": "T.C.A. Sharad Raghavan",
+      "location": "New Delhi",
+      "body": "“Approximately 43% of significant Among the plants discovered Polystichum siangense, a recently discovered fern Despite the West Asia crisis, net remittances from the region to India rose to $16 billion in April 2026, the second month of the conflict, up 70% over the corresponding period of last year, show data presented by the Union Finance Ministry in its latest report. Rajnath The Monthly Economic Review by the Department of Economic Affairs said that this resilience of remittance inflows is consistent with what happened during previous crises such as the COVID-19 pandemic. “Contrary to concerns that geopolitical tensions in the West Asia region could adversely affect remittance inflows from the Gulf economies, transfer receipts have remained robust,” the report said. significant Impatiens (balsams), legumes, and Stable component The report highlighted the stability of remittances during volatile market conditions. “This resilience is consistent with empirical findings that remittances are among the most stable components of external financing, remaining relatively insulated from episodes of financial market volatility and geopolitical foreign direct investment, remittance inflows are relatively acyclical,” the report added. The Ministry report said that this resilience comes about because remittances are flows of funds driven by employment conditions and wage levels in host economies rather than by financial market signals or investor sentiments. This means that remittances from the Gulf countries are more anchored to the working conditions there than the stock market performance in India. In fact, an analysis in the report found that remittances in the short run may even run opposite to what a shock would generally result in. That is, migrants in other countries front-load precautionary transfers back home during periods of uncertainty and stress. The report, however, stopped short of saying whether this is what was playing out in the case of remittances to India. However, this also leads to what could be a risk in the medium and long-term if the war-like conditions in the region do not abate. Labour market “The principal risk to remittance inflows, however, arises from a sustained deterioration in labour market conditions in host economies that affects migrant employment and earnings,” the report said. “Consequently, while short-term external shocks may have limited effects on remittance inflows, developments in overseas labour markets warrant close monitoring in the",
+      "quality": {
+        "body_characters": 2517,
+        "body_lines": 83,
+        "encoding_artifacts": 0,
+        "metadata_confidence": {
+          "author": 0.97,
+          "location": 0.97
+        },
+        "validation": {
+          "body_present": true,
+          "no_encoding_artifacts": true,
+          "author_not_in_body": true,
+          "location_not_in_body": true
+        },
+        "score": 0.985
+      }
+    }
+  ]
+}
